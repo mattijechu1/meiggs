@@ -42,6 +42,40 @@
             padding: 0;
             margin: 0;
         }
+
+        #minimizable-box, #minimizable-box-2 {
+            position: absolute;
+            bottom: 2%; /* Ajuste de altura */
+            left: 10px;
+            width: 650px;
+            height: 850px;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #minimizable-box .header, #minimizable-box-2 .header {
+            cursor: pointer;
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        #minimized-box, #minimized-box-2 {
+            position: absolute;
+            bottom: 420px; /* Ajuste de altura */
+            left: 10px;
+            width: 190px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            text-align: center;
+            cursor: pointer;
+        }
+        #minimized-box-2 {
+            bottom: 360px; /* Ajuste de altura */
+        }
         </style>
         <title></title>
     </head>
@@ -51,6 +85,52 @@
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
             </div>
+            <div id="minimizable-box" style="display: none;">
+                <div class="header">Descripción</div>
+                <div class="content">
+                    - Zonas PRC:<br>
+                    Las zonas B,B8,E y E6 del PRCS son las que conforman al Barrio Meiggs.<br><br>
+                  
+                    - Zonas con incentivos:<br>
+                    Las zonas B y E6 del PRCS, cuentan con incentivos de edificación, formando parte de Barrio Meiggs.<br><br>
+
+                    - Coeficiente de constructibilidad (2, 2.7, 3.6):<br>
+                    Es el numero que multiplicado por la superficie del predio, fija el máximo de metros cuadrados posibles de construir sobre el terreno, descartando de esta ultima a las áreas de utilidad pública.<br><br>
+
+                    - Coeficiente de construcción en zonas con incentivos (3.5, 4.3):<br>
+                    Es el coeficiente de constructibilidad base fijado por el PRCS + el incremento de coeficiente de constructibilidad por cumplimiento de incentivos <br><br>
+
+                    - Alturas permitidas por predio (14, 17.5, 22.5, 24)<br>
+                    Es la altura máxima de edificación permitida por el PRCS<br><br>
+                     
+                    - Altura máxima de edificación en zonas con incentivos (22.5, 27.5)<br>
+                    Es la altura máxima de edificación considerando:<br>
+                    (Áltura máxima de edificación del PRCS sin incentivos + Altura adicional por cumplimiento de incentivos). 
+                </div>
+            </div>
+            <div id="minimized-box">Zonificación PRC</div>
+
+            <div id="minimizable-box-2" style="display: none;">
+                <div class="header">Condiciones propuestas</div>
+                <div class="content">
+                    1. Destinar un mínimo de un 30% de unidades habitacionales susceptibles a ser adquiridas por beneficiarios de programas habitacionales del Estado, las que deberán contar con una superficie edificada igual o superior a 55m2. <br>
+                    2. Destinar a equipamiento de educación inicial en el primer piso, ocupando el 15% de superficie edificada. Contemplar un mínimo de vanos, equivalente al 40% de la superficie de la fachada que enfrenta la calle, en primer piso. <br>
+                    3. Materialización, reparación o mejoramiento de: áreas verdes y platabandas (arborización, mobiliario o cubre suelo) cercanas al proyecto en un radio de 500m. Equivalente al 30% de la superficie edificada, otorgada tras la aplicación del incentivo. Dicho mejoramiento debe considerar el permiso y recepción de la Subdirección de Ornato Parques y Jardines. <br>
+                    4. Reparación y mejoramiento de aceras, en la misma manzana o manzanas circundantes, equivalentes a 3 veces el largo del frente predial del edificio. Dichas reparaciones deben contar con permiso y recepción de la Subdirección de Pavimentación. <br>
+                    5. Cumplir con la Certificación de requerimientos obligatorios de la macrozona centro de la CVS residencial multifamiliar. Debe obtener precertificación en etapa de diseño y certificación en etapa de construcción. <br>
+                    6. Soterrar el cableado aéreo, al menos en la totalidad del frente predial, él que deberá dar cumplimiento a la normativa vigente y contar con la certificación del organismo competente. <br>
+                    7. Incorporar un sistema complementario de paneles fotovoltaicos, que permita abastecer el gasto energético de los espacios comunes, con la respectiva certificación del organismo competente. Estos paneles deberán ser dispuestos en el piso mecánico, del último piso. <br>
+                    8. Disponer de recintos para reciclaje al interior del predio a nivel de terreno, con una superficie mínima de 26m2. <br>
+                    9. Incorporar 5 cargadores para vehículos eléctricos, en estacionamientos que sean parte de los bienes comunes. Dicha instalación debe estar certificada por el organismo competente. <br>
+                    10. Limpieza, reparación y pintura de fachadas de edificaciones patrimoniales equivalente al 50% de la superficie edificada, otorgada tras la aplicación del incentivo. La que deberá contar, con permiso sectorial correspondiente. <br>
+                    11. Ejecutar bajadas universales en las aceras de la manzana en la que se emplaza el proyecto y en 9 manzanas colindantes. Estas, serán adicionales a las contempladas en los IMIV y distintas a las exigidas por concepto de obra de urbanización. La que debe contar con el permiso y recepción de la Subdirección de Pavimentación. <br>
+                    12. Implementar zona de juegos infantiles en áreas verdes aledañas al proyecto, exceptuando platabandas. Equivalente al 10% de la superficie edificada, otorgada tras la aplicación del incentivo, con una superficie mínima de 500m2, la que deberá contar con el permiso y recepción por la Subdirección de Ornato Parques y Jardines. <br>
+                    13. Implementar zona de calistenia en plazas y espacio público aledañas al proyecto, en un área equivalente al 10% de la superficie edificada, otorgada tras la aplicación del incentivo, con una superficie mínima de 150m2, la que deberá contar con el permiso y recepción de la Subdirección de Ornato Parques y Jardines. <br>
+                    14. Implementar zona de caniles, en un área equivalente al 10% de la superficie edificada, otorgada tras la aplicación del incentivo, con una superficie mínima de 200m2, la que deberá contar con el permiso y recepción de la Subdirección de Ornato Parques y Jardines. <br>
+                    15. Destinar un 10% del total de estacionamientos a residentes permanentes del barrio, que no sean propietarios del proyecto.
+                </div>
+            </div>
+            <div id="minimized-box-2">Condiciones propuestas</div>
         </div>
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="resources/polyfills.js"></script>
@@ -58,10 +138,53 @@
         <script src="./resources/ol.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
         <script src="resources/ol-geocoder.js"></script>
-        <script src="layers/Alturas_maximas_edificadas_2.js"></script><script src="layers/COEFICIENTE_DE_CONSTRUCCIN_EN_ZONAS_CON_INCENTIVOS_3.js"></script><script src="layers/ZONAS_CON_INCENTIVOS_DE_EDIFICACIN_MEIGGS_4.js"></script><script src="layers/CONDICIONANTES_PROPUESTAS_5.js"></script><script src="layers/ALTURAS_PERMITIDAS_POR_PREDIO_PRC_6.js"></script><script src="layers/COEFICIENTE_DE_CONSTRUCTIBILIDAD_7.js"></script><script src="layers/ZONAS_PRC_MEIGGS_8.js"></script><script src="layers/MEIGGS_USO_DE_SUELO_EXISTENTE_SII_9.js"></script>
-        <script src="styles/Alturas_maximas_edificadas_2_style.js"></script><script src="styles/COEFICIENTE_DE_CONSTRUCCIN_EN_ZONAS_CON_INCENTIVOS_3_style.js"></script><script src="styles/ZONAS_CON_INCENTIVOS_DE_EDIFICACIN_MEIGGS_4_style.js"></script><script src="styles/CONDICIONANTES_PROPUESTAS_5_style.js"></script><script src="styles/ALTURAS_PERMITIDAS_POR_PREDIO_PRC_6_style.js"></script><script src="styles/COEFICIENTE_DE_CONSTRUCTIBILIDAD_7_style.js"></script><script src="styles/ZONAS_PRC_MEIGGS_8_style.js"></script><script src="styles/MEIGGS_USO_DE_SUELO_EXISTENTE_SII_9_style.js"></script>
+        <script src="layers/Alturas_maximas_edificadas_2.js"></script>
+        <script src="layers/COEFICIENTE_DE_CONSTRUCCIN_EN_ZONAS_CON_INCENTIVOS_3.js"></script>
+        <script src="layers/ZONAS_CON_INCENTIVOS_DE_EDIFICACIN_MEIGGS_4.js"></script>
+        <script src="layers/CONDICIONANTES_PROPUESTAS_5.js"></script>
+        <script src="layers/ALTURAS_PERMITIDAS_POR_PREDIO_PRC_6.js"></script>
+        <script src="layers/COEFICIENTE_DE_CONSTRUCTIBILIDAD_7.js"></script>
+        <script src="layers/ZONAS_PRC_MEIGGS_8.js"></script>
+        <script src="layers/MEIGGS_USO_DE_SUELO_EXISTENTE_SII_9.js"></script>
+        <script src="styles/Alturas_maximas_edificadas_2_style.js"></script>
+        <script src="styles/COEFICIENTE_DE_CONSTRUCCIN_EN_ZONAS_CON_INCENTIVOS_3_style.js"></script>
+        <script src="styles/ZONAS_CON_INCENTIVOS_DE_EDIFICACIN_MEIGGS_4_style.js"></script>
+        <script src="styles/CONDICIONANTES_PROPUESTAS_5_style.js"></script>
+        <script src="styles/ALTURAS_PERMITIDAS_POR_PREDIO_PRC_6_style.js"></script>
+        <script src="styles/COEFICIENTE_DE_CONSTRUCTIBILIDAD_7_style.js"></script>
+        <script src="styles/ZONAS_PRC_MEIGGS_8_style.js"></script>
+        <script src="styles/MEIGGS_USO_DE_SUELO_EXISTENTE_SII_9_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const minimizableBox = document.getElementById('minimizable-box');
+            const minimizedBox = document.getElementById('minimized-box');
+
+            const minimizableBox2 = document.getElementById('minimizable-box-2');
+            const minimizedBox2 = document.getElementById('minimized-box-2');
+
+            minimizableBox.querySelector('.header').addEventListener('click', function() {
+                minimizableBox.style.display = 'none';
+                minimizedBox.style.display = 'block';
+            });
+
+            minimizedBox.addEventListener('click', function() {
+                minimizableBox.style.display = 'block';
+                minimizedBox.style.display = 'none';
+            });
+
+            minimizableBox2.querySelector('.header').addEventListener('click', function() {
+                minimizableBox2.style.display = 'none';
+                minimizedBox2.style.display = 'block';
+            });
+
+            minimizedBox2.addEventListener('click', function() {
+                minimizableBox2.style.display = 'block';
+                minimizedBox2.style.display = 'none';
+            });
+        });
+        </script>
     </body>
 </html>
